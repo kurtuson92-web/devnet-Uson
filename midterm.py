@@ -1,11 +1,29 @@
-R1 = "192.168.1.1 - Active"
-R2 = "192.168.1.2 - Active"
+
 
 devices = []
 
-cho = int(input("Choose an option"))
 
-while:
+def add_device(device_list):
+    device_list = {
+        "name": "Router1",
+        "ip": "192.168.1.1",
+        "status": "Active"
+    }
+
+    name = str(input("Device name"))
+    device_list.append(name)
+
+    ip = int(input("Add IP address"))
+    device_list.append(ip)
+
+    status = str(input("Enter status"))
+    device_list.append(status)
+
+    pass
+
+def view_devices(device_list):{
+    print(device_list)
+}
 
 def display_menu():
     print("=== Network Device Inventory ===")
@@ -18,16 +36,27 @@ def display_menu():
 
 
 
-def add_device(device_list):
+while True:
+    display_menu()
+    cho = int(input("Choose an option: "))
 
-    new = str(input("Device name"))
-    ip = int(input("Add IP address"))
-    sta = str(input("Enter status"))
+    if cho == 1:{
+        add_device()
+    }
 
-    pass
+    elif cho ==2:{
+        view_devices()
+    }
 
-def view_devices(device_list):{
-    print("Devices: " , device_list)
-}
-
-print(display_menu)
+    elif cho ==3:{
+        print("choice 3")
+    }
+    elif cho ==4:{
+        print("choice 4")
+    }
+    elif cho ==5:
+        break
+    else:{
+        print("enter a valid choice")
+        }
+    break
